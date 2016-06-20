@@ -604,6 +604,12 @@ void scheduleDate(thread_arg targ, char* username, char* args)
     char wd[1024];
     getcwd(wd, 1024);
     sprintf(path, "%s/storage/invites/%s", wd, username);
+    if(!fileExists(path))
+    {
+        if (0 >= bulk_write(targ.socketFd, "No pending invites\n", strlen("No pending invites\n")))
+            ERR("Write error");
+        return;
+    }
     lockFile(targ, path);
     setAiocbRead(&aios, path);
     waitAiocb(&aios);

@@ -1,0 +1,17 @@
+Available commands:
+set <name of property> <value> - sets field in profile
+view a - print all profiles
+view u <username> - prints profile of <username>
+find <name of property> <value> - prints of all usernames with value of <name of property> in profiles equal to <value>
+invite <username> - invites user with username
+schedule - only avaialble if you have pending invites, you will presented with list of users that invited you, input the name you want to schedule with, then input the date from the list of provided free dates eg Mo 17
+quit - logs off
+available properties of profile(they are not case sensitive):
+age
+sex 
+location
+job
+height
+other
+
+
